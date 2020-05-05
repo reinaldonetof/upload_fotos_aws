@@ -9,6 +9,7 @@ const app = express();
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: true,
 });
 
 app.use(express.json());
