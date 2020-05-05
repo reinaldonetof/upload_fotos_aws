@@ -6,11 +6,13 @@ dotenv.config({
 });
 
 const accessKeyId = process.env.ACCESS_KEY_ID;
-const accessKeySecret = process.env.ACCESS_KEY_SECRET;
+const secretAccessKey = process.env.ACCESS_KEY_SECRET;
 const userArn = process.env.USER_ARN;
+const defaultRegion = process.env.AWS_DEFAULT_REGION;
 
 module.exports = {
   accessKeyId,
-  accessKeySecret,
+  secretAccessKey,
   userArn,
+  defaultRegion,
 };
