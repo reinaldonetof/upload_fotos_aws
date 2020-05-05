@@ -8,3 +8,9 @@ dotenv.config({
 const accessKeyId = process.env.ACCESS_KEY_ID;
 const accessKeySecret = process.env.ACCESS_KEY_SECRET;
 const userArn = process.env.USER_ARN;
+
+module.exports = {
+  accessKeyId,
+  accessKeySecret,
+  userArn,
+};
