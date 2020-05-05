@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 const aws = require("aws-sdk");
+const fs = require("fs");
+const path = require("path");
+const { promisify } = require("util");
 
 const s3 = new aws.S3();
 
@@ -29,6 +32,9 @@ PostSchema.pre("remove", function () {
       })
       .promise();
   } else {
+    return promisify(fs.unlink)(
+      path.resolve(__dirname, "..", "..", "tmp", "uploads", this.key)
+    );
   }
 });
 
